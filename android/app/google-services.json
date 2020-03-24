@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "935760865241",
+    "firebase_url": "https://heart-disease-predictor-d9b32.firebaseio.com",
+    "project_id": "heart-disease-predictor-d9b32",
+    "storage_bucket": "heart-disease-predictor-d9b32.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:935760865241:android:44bdeb2b01e8ee305a9bc8",
+        "android_client_info": {
+          "package_name": "com.ppdomain.heart_disease_prediction"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "935760865241-nqidglod7i2sie9ktgbun22mghspl20l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBv8HzQ9h9Bq8gqYpECAoREDhHGoePNYc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "935760865241-nqidglod7i2sie9ktgbun22mghspl20l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
