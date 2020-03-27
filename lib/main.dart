@@ -18,7 +18,7 @@ GetIt locator = GetIt.instance;
 
 const String LoginViewRoute = "LoginView";
 const String SignUpViewRoute = "SignUp";
-const String HomeViewRoute = "HomeView";
+//const String HomeViewRoute = "HomeView";
 
 
 void main() {
@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
         "/c": (BuildContext context) => TipsPage(),
         "/d": (BuildContext context) => SymptomsPage(),
         "/e": (BuildContext context) => LoginPage(),
-        "/f": (BuildContext context) => SignUpPage(),
+        //"/f": (BuildContext context) => SignUpPage(),
       },
     );
   }}

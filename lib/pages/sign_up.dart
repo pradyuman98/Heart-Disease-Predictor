@@ -1,4 +1,4 @@
-
+/*
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:heart_disease_prediction/bloc_navigation/navigation_bloc.dart';
@@ -365,4 +365,4 @@ class _SignUpPageState extends State<SignUpPage> {
     );
   }
 }
-
+*/

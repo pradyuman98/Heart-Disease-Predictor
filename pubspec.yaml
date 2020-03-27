@@ -62,13 +62,14 @@ flutter:
    - images/10Tips.jpeg
    - images/Symptoms.jpeg
    - images/original.png
-   - icons/513.png
-   - icons/514.png
-   - icons/518.png
-   - icons/bag.png
-   - icons/bag2x.png
-   - images/SymptomsNew.png
    - images/shield.png
+   - images/goog.jpg
+   - images/home.png
+   - images/tips.png
+   - images/test.png
+   - images/customer.png
+   - images/data-mining.png
+   - images/login.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

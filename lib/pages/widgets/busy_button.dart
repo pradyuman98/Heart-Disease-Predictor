@@ -24,21 +24,27 @@ class _BusyButtonState extends State<BusyButton> {
       onTap: widget.onPressed,
       child: InkWell(
         child: AnimatedContainer(
-          height: widget.busy ? 40 : null,
-          width: widget.busy ? 40 : null,
+
+          height: 40,
+          width: 120,
           duration: const Duration(milliseconds: 300),
           alignment: Alignment.center,
           padding: EdgeInsets.symmetric(
               horizontal: widget.busy ? 10 : 15,
               vertical: widget.busy ? 10 : 10),
-          decoration: BoxDecoration(
-            color: widget.enabled ? Colors.grey[800] : Colors.grey[300],
-            borderRadius: BorderRadius.circular(5),
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: <Color>[
+                Colors.red,
+                Colors.lightBlueAccent,
+              ],
+            ),
+            borderRadius: BorderRadius.all(Radius.circular(80.0),),
           ),
           child: !widget.busy
               ? Text(
             widget.title,
-            style: buttonTitleTextStyle,
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.white),
           )
               : CircularProgressIndicator(
               strokeWidth: 2,

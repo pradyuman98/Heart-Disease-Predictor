@@ -9,7 +9,7 @@ import 'package:heart_disease_prediction/pages/symptoms.dart';
 import 'package:heart_disease_prediction/pages/tips.dart';
 
 enum NavigationEvents {HomePageClickedEvent, PreventionClickedEvent, PredictionClickedEvent, SymptomsClickedEvent,
-  TipsClickedEvent, LoginClickedEvent, SignUpClickedEvent }
+  TipsClickedEvent, }
 
 abstract class NavigationStates{}
 
@@ -39,13 +39,6 @@ class NavigationBloc extends Bloc<NavigationEvents, NavigationStates> {
         yield TipsPage();
         break;
 
-      case NavigationEvents.LoginClickedEvent:
-        yield LoginPage();
-        break;
-
-      case NavigationEvents.SignUpClickedEvent:
-        yield SignUpPage();
-        break;
     }
     }
   }

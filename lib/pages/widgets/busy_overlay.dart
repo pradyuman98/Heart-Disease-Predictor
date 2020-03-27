@@ -26,7 +26,6 @@ class BusyOverlay extends StatelessWidget {
                   width: screenSize.width,
                   height: screenSize.height,
                   alignment: Alignment.center,
-                  color: Color.fromARGB(100, 0, 0, 0),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[

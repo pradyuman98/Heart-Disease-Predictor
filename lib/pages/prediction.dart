@@ -57,7 +57,7 @@ class PredictionMainPageState extends State<PredictionMainPage> {
         key: _scaffoldKey,
         appBar: PreferredSize(child:AppBar(
           leading: IconButton(
-            iconSize: 30.0,
+            iconSize: 32.0,
             icon: Icon(Icons.menu),
             onPressed: () {
               _scaffoldKey.currentState.openDrawer();
@@ -87,92 +87,89 @@ class PredictionMainPageState extends State<PredictionMainPage> {
             padding: EdgeInsets.zero,
             children: <Widget>[
               SizedBox(height: 20.0,),
-              DrawerHeader(
-                child: Center(
-                    child: _isLoggedIn
-                        ? Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Image.network(_googleSignIn.currentUser.photoUrl, height: 50.0, width: 50.0,),
-                        Text(_googleSignIn.currentUser.displayName),
-                      ],
-                    )
-                        : Center(
-                      child: OutlineButton(
-                        child: Text("Login with Google"),
-                        onPressed: () {
-                          Navigator.of(context).pushNamed("/e");
-                        },
-                      ),
-                    )),
-
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                        colors: <Color>[
-                          Colors.red[900],
-                          Colors.orange[300]
-                        ])
-                ),
-              ),
-
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 23),
-                child: Column(
-                  children: <Widget>[
+                height: 150,
+                child: DrawerHeader(
+                  child: Center(
+                      child: Container(
+                        height: 100,
+                        child:Image.asset('images/shield.png') ,)),
 
-                    ListTile(
-
-                      title: Text('Home', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,),),
-                      onTap: () {
-                        Navigator.of(context).pushNamed("/a");
-                      },
-                    ),
-                    ListTile(
-                      title: Text('Prediction',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,),),
-                      onTap: () {
-                        Navigator.of(context).pushNamed("/b");
-                      },
-                    ),
-                    ListTile(
-                      title: Text('Symptoms',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,),),
-                      onTap: () {
-                        Navigator.of(context).pushNamed("/d");
-                      },
-                    ),
-                    ListTile(
-                      title: Text('Tips',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,),),
-                      onTap: () {
-                        Navigator.of(context).pushNamed("/c");
-                      },
-                    ),
-                    Divider(
-                      height: 64,
-                      thickness: 0.6,
-                      color: Colors.grey,
-                      indent: 32,
-                      endIndent: 32,
-
-                    ),
-
-                    ListTile(
-                      title: Text('Login',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,),),
-                      onTap: () {
-                        Navigator.of(context).pushNamed("/e");
-                      },
-                    ),
-
-                    ListTile(
-
-                      title: Text('Sign Up',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,),),
-                      onTap: () {
-                        Navigator.of(context).pushNamed("/f");
-                      },
-                    ),
-                  ],
+                  decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: <Color>[
+                            Colors.red[900],
+                            Colors.orange[300]
+                          ])
+                  ),
                 ),
+
               ),
+
+              ListTile(
+                title: Text('Home', style: TextStyle(fontSize: 25,),),
+                leading: Image.asset("images/home.png"),
+                onTap: () {
+                  Navigator.of(context).pushNamed("/a");
+                },
+              ),
+              SizedBox(height: 10,),
+              ListTile(
+                title: Text('Prediction',style: TextStyle(fontSize: 25),),
+                leading: Image.asset("images/data-mining.png"),
+                onTap: () {
+                  Navigator.of(context).pushNamed("/b");
+                },
+              ),
+              SizedBox(height: 10,),
+              ListTile(
+                title: Text('Symptoms',style: TextStyle(fontSize: 25),),
+                leading: Image.asset("images/test.png"),
+
+                onTap: () {
+                  Navigator.of(context).pushNamed("/d");
+                },
+              ),
+              SizedBox(height: 10,),
+              ListTile(
+                title: Text('Tips',style: TextStyle(fontSize: 25),),
+                leading: Image.asset("images/tips.png"),
+
+                onTap: () {
+                  Navigator.of(context).pushNamed("/c");
+                },
+              ),
+              SizedBox(height: 10,),
+              Divider(
+                height: 64,
+                thickness: 0.6,
+                color: Colors.grey,
+                indent: 32,
+                endIndent: 32,
+
+              ),
+
+              ListTile(
+                title: Text('Login',style: TextStyle(fontSize: 25),),
+                leading: Image.asset("images/login.png"),
+
+                onTap: () {
+                  Navigator.pushNamed(context, "LoginView");
+                },
+              ),
+              SizedBox(height: 10,),
+
+              ListTile(
+                title: Text('Sign Up',style: TextStyle(fontSize: 25),),
+                leading: Image.asset("images/customer.png"),
+
+                onTap: () {
+                  Navigator.pushNamed(context, "SignUp");
+                },
+              ),
+              SizedBox(height: 10,),
 
             ],
           ),

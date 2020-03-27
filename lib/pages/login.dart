@@ -86,19 +86,7 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(height: 20.0,),
             Container(
               child:  DrawerHeader(
-                child: Center(
-                    child: _isLoggedIn
-                        ? Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Image.network(_googleSignIn.currentUser.photoUrl, height: 50.0, width: 50.0,),
-                        Text(_googleSignIn.currentUser.displayName),
-                      ],
-                    )
-                        : Center(
-
-                    )
-                ),
+                child: SizedBox(child: Image.asset("images/shield.png"),),
 
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
@@ -155,7 +143,7 @@ class _LoginPageState extends State<LoginPage> {
                     ListTile(
                       title: Text('Login',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,),),
                       onTap: () {
-                        Navigator.of(context).pushNamed("/e");
+                        Navigator.of(context).pushNamed("LoginView");
                       },
                     ),
 
@@ -163,7 +151,7 @@ class _LoginPageState extends State<LoginPage> {
 
                       title: Text('Sign Up',style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,),),
                       onTap: () {
-                        Navigator.of(context).pushNamed("/f");
+                        Navigator.of(context).pushNamed("SignUp");
                       },
                     ),
                   ],
@@ -187,76 +175,72 @@ class _LoginPageState extends State<LoginPage> {
                     children: <Widget>[
 
                       Container(
-                        padding: EdgeInsets.fromLTRB(15, 80, 0, 0),
+                        padding: EdgeInsets.fromLTRB(15, 50, 0, 0),
                         child: Text("Hello", style: TextStyle(fontSize: 80.0, fontWeight: FontWeight.bold),),
                       ),
                       Container(
-                        padding: EdgeInsets.fromLTRB(15, 150, 0, 0),
+                        padding: EdgeInsets.fromLTRB(15, 120, 0, 0),
                         child: Text("There", style: TextStyle(fontSize: 80.0, fontWeight: FontWeight.bold),),
                       ),
                       Container(
-                        padding: EdgeInsets.fromLTRB(225, 150, 0, 0),
+                        padding: EdgeInsets.fromLTRB(225, 120, 0, 0),
                         child: Text(".", style: TextStyle(fontSize: 80.0, fontWeight: FontWeight.bold, color: Colors.red[800]),),
                       ),
 
                     ],
                   ),
                 ),
+
+                SizedBox(height: 5,),
+
+
+
                 Container(
                   padding: EdgeInsets.only(top: 35.0, left: 20, right: 20),
                   child: Column(
                     children: <Widget>[
-                      Form(
-                          key: _formKey,
-                          child: Column(
-                              children: <Widget>[
-                                TextFormField(
-                                  // ignore: missing_return
-                                  validator: (input) {
-                                    if(input.isEmpty){
-                                      return 'Provide an email';
-                                    }
-                                  },
-                                  onSaved: (input) => _email = input,
-                                  decoration: InputDecoration(
-                                      labelText: 'Email',
-                                    hintText: "Enter Registerd Email"
-
-                                  ),
-
-                                ),
-                                TextFormField(
-                                  // ignore: missing_return
-                                  validator: (input) {
-                                    if(input.length < 6){
-                                      return 'Password is of 6 characters';
-                                    }
-                                  },
-                                  onSaved: (input) => _password = input,
-                                  decoration: InputDecoration(
-                                      labelText: 'Password',
-                                    hintText: "Enter Password"
-
-                                  ),
-
-                                  obscureText: true,
-                                )
-                              ]))
 
 
-                      ,
-                      SizedBox(height: 10.0,),
+                      Row(
 
-                      Container(
-                        alignment: Alignment(1, 0),
-                        padding: EdgeInsets.only(top: 15.0, left: 20.0),
-                        child: InkWell(
-                          child: Text("Forgot Password", style: TextStyle(fontWeight: FontWeight.bold,
-                              fontFamily: 'Montserrat', color: Colors.red[700], fontSize: 16),),
+                        children: <Widget>[
+                          Container(
+                            padding: EdgeInsets.only(left: 45),
+                            height: 50.0,
 
+                            child: Image.asset("images/goog.jpg"),),
+
+                          Container(
+                            child: Text("  Google Sign In", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
+                          ),
+
+
+                        ],
+                      ),
+
+
+
+
+                        Center(
+                        child: _isLoggedIn
+                        ? Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          SizedBox(height: 10.0,),
+                        Image.network(_googleSignIn.currentUser.photoUrl, height: 100.0, width: 100.0,),
+                        Text(_googleSignIn.currentUser.displayName, style: TextStyle(fontSize: 25),),
+                        ],
+                        )
+                            : Center(
+
+                        )
                         ),
 
-                      ),
+
+                      
+                      SizedBox(height: 10.0,),
+
+                     
 
                       SizedBox(height: 30.0,),
 
@@ -277,10 +261,10 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           child: Container(
                             height: 65,
-                            width: 300,
+                            width: 200,
                             alignment: Alignment.center,
                             child: const Text(
-                              'Login',style: TextStyle(color: Colors.white, fontSize: 27.5, fontWeight: FontWeight.bold),
+                              'Sign In',style: TextStyle(color: Colors.white, fontSize: 27.5, fontWeight: FontWeight.bold),
                               textAlign: TextAlign.center,
                             ),
                           ),
@@ -306,14 +290,29 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           child: Container(
                             height: 65,
-                            width: 300,
+                            width: 200,
                             alignment: Alignment.center,
                             child: const Text(
-                              'Log Out',style: TextStyle(color: Colors.black, fontSize: 27.5, fontWeight: FontWeight.bold),
+                              'Sign Out',style: TextStyle(color: Colors.black, fontSize: 27.5, fontWeight: FontWeight.bold),
                               textAlign: TextAlign.center,
                             ),
                           ),
                         ),
+                      ),
+
+
+                      SizedBox(height: 20.0,),
+
+
+                      FlatButton(
+                        child: Text("SignUp with other Emails", style: TextStyle(fontSize: 18),),
+                        highlightColor: Colors.red,
+                        textColor: Colors.blue,
+                        splashColor: Colors.red[900],
+                        onPressed: () {
+                          Navigator.pushNamed(context, "SignUp" );
+
+                        },
                       ),
 
 
