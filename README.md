@@ -1,6 +1,6 @@
 # heart_disease_prediction
 
-A new Flutter application.
+An Application which can predict the presence of Heart Disease in human body at an early stage using Artifical Neural Network.
 
 ## Getting Started
 
