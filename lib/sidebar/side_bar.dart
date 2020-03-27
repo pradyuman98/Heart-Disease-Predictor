@@ -1,3 +1,4 @@
+/*
 import 'dart:async';
 
 import 'package:flutter/material.dart';
@@ -69,7 +70,9 @@ class SideBarLayout extends StatelessWidget {
 
 
       ),
-      SideBar(),
+      Positioned(top: 0,
+      child: SideBar(),)
+
     ],
     )
     )
@@ -341,6 +344,6 @@ class MenuItem extends StatelessWidget {
 
   }
 }
-
+*/
 
 

@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "935760865241-2og04ivs2hrac06jct71lkcnnr8lb67c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ppdomain.heart_disease_prediction",
+            "certificate_hash": "54b3d1459ad57afc780c4f84cb2df245d11f1bdc"
+          }
+        },
+        {
           "client_id": "935760865241-nqidglod7i2sie9ktgbun22mghspl20l.apps.googleusercontent.com",
           "client_type": 3
         }
