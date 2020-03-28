@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:heart_disease_prediction/bloc_navigation/navigation_bloc.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class HomePage extends StatefulWidget with NavigationStates {
+
+  final FirebaseUser userDetails;
+
+  const HomePage({Key key,  this.userDetails}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -13,7 +18,6 @@ class _HomePageState extends State<HomePage> {
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
   bool _isLoggedIn = false;
   GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
-
 
   _login() async{
     try{
@@ -45,6 +49,7 @@ class _HomePageState extends State<HomePage> {
             _scaffoldKey.currentState.openDrawer();
           },
         ),
+
         title: Text("My Heart", style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),),
         flexibleSpace: Container(
           decoration: BoxDecoration(
@@ -70,12 +75,16 @@ class _HomePageState extends State<HomePage> {
             children: <Widget>[
               SizedBox(height: 20.0,),
               Container(
-                height: 150,
                 child: DrawerHeader(
                   child: Center(
-                      child: Container(
-                        height: 100,
-                        child:Image.asset('images/shield.png') ,)),
+                      child: ListView(
+                        children: <Widget>[
+                      Container(height: 100, child: Image.asset('images/shield.png'),),
+                          Text(
+                            "${widget.userDetails.email}Hello"
+                          ),
+                        ])),
+
 
                   decoration: BoxDecoration(
                       gradient: LinearGradient(

@@ -29,7 +29,7 @@ class LoginViewModel extends BaseModel {
 
     if (result is bool) {
       if (result) {
-        _navigationService.navigateTo("/a");
+        _navigationService.navigateTo("/a", userDetails:result);
       } else {
         await _dialogService.showDialog(
           title: 'Login Failure',

@@ -6,6 +6,7 @@ import 'package:heart_disease_prediction/pages/widgets/text_link.dart';
 import 'package:provider_architecture/provider_architecture.dart';
 import 'package:heart_disease_prediction/viewmodels/login_view_model.dart';
 
+
 // ignore: must_be_immutable
 class LoginView extends StatelessWidget {
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
