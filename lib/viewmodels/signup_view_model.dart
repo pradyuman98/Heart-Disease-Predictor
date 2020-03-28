@@ -23,12 +23,11 @@ class SignUpViewModel extends BaseModel {
       email: email,
       password: password,
     );
-
     setBusy(false);
 
     if (result is bool) {
       if (result) {
-        _navigationService.navigateTo("/a");
+        _navigationService.navigateTo("LoginView");
       } else {
         await _dialogService.showDialog(
           title: 'Sign Up Failure',

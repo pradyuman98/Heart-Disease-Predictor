@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:heart_disease_prediction/bloc_navigation/navigation_bloc.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
 class HomePage extends StatefulWidget with NavigationStates {
-
-  final FirebaseUser userDetails;
-
-  const HomePage({Key key,  this.userDetails}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -16,26 +11,8 @@ class HomePage extends StatefulWidget with NavigationStates {
 class _HomePageState extends State<HomePage> {
 
   GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
-  bool _isLoggedIn = false;
-  GoogleSignIn _googleSignIn = GoogleSignIn(scopes: ['email']);
 
-  _login() async{
-    try{
-      await _googleSignIn.signIn();
-      setState(() {
-        _isLoggedIn = true;
-      });
-    } catch (err){
-      print(err);
-    }
-  }
 
-  _logout(){
-    _googleSignIn.signOut();
-    setState(() {
-      _isLoggedIn = false;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -80,8 +57,9 @@ class _HomePageState extends State<HomePage> {
                       child: ListView(
                         children: <Widget>[
                       Container(height: 100, child: Image.asset('images/shield.png'),),
+                          SizedBox(height: 10,),
                           Text(
-                            "${widget.userDetails.email}Hello"
+                            "          {widget.arguments.email}Hello"
                           ),
                         ])),
 

@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:heart_disease_prediction/locator.dart';
-import 'package:heart_disease_prediction/pages/home_view.dart';
 import 'package:heart_disease_prediction/pages/homepage.dart';
 import 'package:heart_disease_prediction/pages/login.dart';
 import 'package:heart_disease_prediction/pages/login_view.dart';
 import 'package:heart_disease_prediction/pages/prediction.dart';
 import 'package:heart_disease_prediction/pages/router.dart';
-import 'package:heart_disease_prediction/pages/sign_up.dart';
 import 'package:heart_disease_prediction/pages/symptoms.dart';
 import 'package:heart_disease_prediction/pages/tips.dart';
 import 'package:heart_disease_prediction/services/dialog_service.dart';
@@ -33,6 +31,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
+      title: "Heart Check",
       debugShowCheckedModeBanner: false,
       builder: (context, child) => Navigator(
         key: locator<DialogService>().dialogNavigationKey,

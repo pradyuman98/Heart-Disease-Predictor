@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:heart_disease_prediction/pages/shared/ui_helpers.dart';
 import 'package:heart_disease_prediction/pages/widgets/busy_button.dart';
 import 'package:heart_disease_prediction/pages/widgets/input_field.dart';
-import 'package:heart_disease_prediction/pages/widgets/text_link.dart';
 import 'package:provider_architecture/provider_architecture.dart';
 import 'package:heart_disease_prediction/viewmodels/login_view_model.dart';
 
@@ -186,7 +185,7 @@ class LoginView extends StatelessWidget {
 
                 verticalSpaceMedium,
                 FlatButton(
-                  child: Text("Click Here to SignUp !", style: TextStyle(fontSize: 18),),
+                  child: Text("   New User? Create Account ", style: TextStyle(fontSize: 18),),
                   textColor: Colors.orange[500],
                   splashColor: Colors.red[900],
                   onPressed: () {

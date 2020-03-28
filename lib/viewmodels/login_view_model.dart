@@ -14,6 +14,7 @@ class LoginViewModel extends BaseModel {
   final DialogService _dialogService = locator<DialogService>();
   final NavigationService _navigationService = locator<NavigationService>();
 
+
   Future login({
     @required String email,
     @required String password,
@@ -27,9 +28,10 @@ class LoginViewModel extends BaseModel {
 
     setBusy(false);
 
+
     if (result is bool) {
       if (result) {
-        _navigationService.navigateTo("/a", userDetails:result);
+        _navigationService.navigateTo("/a");
       } else {
         await _dialogService.showDialog(
           title: 'Login Failure',
