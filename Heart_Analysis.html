@@ -1,0 +1,113 @@
+{%extends "user_again.html"%}
+{%block content%}
+<html>
+<style>
+.log-in{
+  width:280px;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  color:white;
+   margin-left: 650px;
+  margin-top: 400px;
+}
+.textbox{
+    width:100%;
+    font-size: 15px;
+    overflow: hidden;
+    border-bottom: 1px solid forestgreen;
+    padding: 8px 0;
+    margin: 8px 0;
+    color: white;
+
+
+
+  }
+
+
+
+  .textbox input{
+    border: none;
+    background: none;
+    outline: none;
+    background: none;
+    color: white;
+    font-size: 15px;
+    margin: 0 10px;
+
+
+  }
+</style>
+
+<body>
+  
+  <form action="/predict" method='POST'>
+    <div class="textbox">
+      <label for="age">age</label>
+    <input type="number" id="age" placeholder="Enter Your Age" name="age" required min="1" max="130" ><br>
+    </div>
+    <div class="textbox">
+      <p>sex
+      <input type="radio" id="male" name="sex" value='1'>
+      <label for="yes">male</label>
+      <input type="radio" id="female" name="sex" value='0'>
+      <label for="female">female</label></br></p>
+    </div>
+    <div class="textbox">
+      <label for="cp">cp</label>
+      <input type="number" id="cp" placeholder="Your chest pain" title="please enter in number" min="0" max="4" required><br>
+    </div>
+    <div class="textbox">
+      <label for="trestbps">trestbps<label>
+      <input type="number" id="trestbps" placeholder="Your blood presssurre" title="please enter in number" min="10" max="1000" required><br>
+    </div>
+    <div class="textbox">
+      <label for="chol">chol</label>
+      <input type="number" id="chol" placeholder="enter your Cholesterol value" name="chol" min="50" max="1000" required><br>
+    </div>
+    <div class="textbox">
+      <p>fbs
+      <input type="radio" id="yes" name="yes" value='1'>
+      <label for="yes">Yes</label>
+      <input type="radio" id="No" name="yes" value='0'>
+      <label for="No">No</label></br></p>
+    </div>
+
+
+
+    <div class="textbox">
+      <label for="restecg">restecg</label>
+      <input type="number" id="restecg" placeholder="Your restecg" title="please enter 0 or 1" min="0" max="1" required><br>
+    </div>
+    <div class="textbox">
+      <label for="thalach">thalach</label>
+      <input type="number" id="thalach" placeholder="Your thalach vaalue" title="please enter in number" min="0" max="1000" required><br>
+    </div>
+    <div class="textbox">
+      <label for="exang">exang</label>
+      <input type="number" id="exang" placeholder="Your exaang value" title="please enter in 0 or 1" min="0" max="1" required><br>
+    </div>
+    <div class="textbox">
+      <label for="oldpeak">oldpeak</label>
+      <input type="number" id="oldpeak" placeholder="Your oldpeak vaallue" title="please enter in number" min="0" max="6" required><br>
+    </div><div class="textbox">
+      <label for="slope">slope</label>
+      <input type="number" id="slope" placeholder="Your slope value" title="please enter in number" min="0" max="4" required><br>
+    </div>
+
+    <div class="textbox">
+      <label for="ca">ca</label>
+      <input type="number" id="ca" placeholder="Your ca vaalllue" title="please enter in number" min="0" max="4" required><br>
+    </div>
+    <div class="textbox">
+      <label for="thal">thal</label>
+      <input type="number" id="thal" placeholder="Your thal value" title="please enter in number" min="0" max="4" required><br>
+    </div>
+    <div class="textbox">
+    <button style="margin-left:50px;" type="submit">Submit</button>
+    </div>
+  </form>
+
+{{pred}}
+</body>
+
+{%endblock%}
